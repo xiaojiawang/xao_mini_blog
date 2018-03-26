@@ -5,10 +5,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    produts:[
-      { name: "商品1", price: "12", url: "/images/products/01.jpg" },
+    products:[
+      { name: "商品111121", price: "12", url: "/images/products/01.jpg" },
       { name: "商品2", price: "12", url: "/images/products/02.jpg" },
-      { name: "商品3", price: "12", url: "/images/products/03.jpg" }, 
+      { name: "商品3", price: "12", url: "/images/products/03.jpg" },
       { name: "商品4", price: "12", url: "/images/products/04.jpg" }],
     test: "测试",
     blogs: ''
@@ -23,13 +23,10 @@ Page({
       url: 'http://120.79.51.220/wap/products',
       dataType: 'json',
       success: function (res) {
-        // for(var i = 0; i < res.data.length; i++){
-
-        // }
-        that.setData({
-          name: res.data.products[0].name
-        })
         console.log(res.data.products);
+        that.setData({
+          products: res.data.products
+        })
       }
     })
   },
@@ -38,14 +35,13 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-  
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
   },
 
   /**
