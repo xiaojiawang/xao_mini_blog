@@ -1,0 +1,4 @@
+<!--pages/mine/mine.wxml-->
+<view class='container'>{{ title }}</view>
+<view class='container'>{{ author }}</view>
+<view class='container'>{{ created_at }}</view>

@@ -1,0 +1,12 @@
+<!--pages/products/products.wxml-->
+<view class='container'>
+<view></view>
+	<view class='products-container'>
+		<view wx:for="{{produts}}" class='products-box'>
+  		<image class='img' src="{{item.url}}" mode="aspectFit"></image>
+  		<view class='name'>{{item.name}}</view>
+      <view class='name'>{{item.price}}￥</view>
+		</view>
+  </view>
+
+</view> 
