@@ -13,19 +13,15 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    wx.request({
-      url: 'http://120.79.51.220/wap/products',
-      dataType: 'json',
-      success: function (res) {
-        that.setData({
-          name: res.data.products[0].name
-        })
-        console.log(res.data.products);
-        // this.setData({
-        //   title: res.title
-        // })
-      }
-    })
+    wx.getLocation({
+      type: 'wgs84',
+      success: function(res) {
+        var latitude = res.latitude
+        var longitude = res.longitude
+    var speed = res.speed
+    var accuracy = res.accuracy
+  }
+})
 
   },
 

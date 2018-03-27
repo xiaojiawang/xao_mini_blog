@@ -1,15 +1,20 @@
 // pages/products/products.js
 Page({
 
+  showProduct: function(e){
+    // e.detail // 自定义组件触发事件时提供的detail对象
+    console.log(e);
+  },
+
   /**
    * 页面的初始数据
    */
   data: {
     products:[
-      { name: "商品111121", price: "12", url: "/images/products/01.jpg" },
-      { name: "商品2", price: "12", url: "/images/products/02.jpg" },
-      { name: "商品3", price: "12", url: "/images/products/03.jpg" },
-      { name: "商品4", price: "12", url: "/images/products/04.jpg" }],
+      { name: "商品111121", price: "12", pic_url: "/images/products/01.jpg" },
+      { name: "商品2", price: "12", pic_url: "/images/products/02.jpg" },
+      { name: "商品3", price: "12", pic_url: "/images/products/03.jpg" },
+      { name: "商品4", price: "12", pic_url: "/images/products/04.jpg" }],
     test: "测试",
     blogs: ''
   },
