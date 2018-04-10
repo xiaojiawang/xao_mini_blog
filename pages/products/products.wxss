@@ -33,7 +33,7 @@
   white-space: nowrap;
   overflow: hidden;
   font-size: 24rpx;
-  padding: 24rpx 0 0rpx 0;
+  padding: 12rpx 0 0rpx 0;
   color:#000;
   margin-left: 24rpx;
 }
@@ -43,7 +43,7 @@
   white-space: nowrap;
   overflow: hidden;
   font-size: 24rpx;
-  padding: 24rpx 0 0rpx 0;
+  padding: 12rpx 0 0rpx 0;
   color:#000;
   margin-left: 24rpx;
 }

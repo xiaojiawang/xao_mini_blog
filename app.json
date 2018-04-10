@@ -1,9 +1,12 @@
 {
   "pages": [
+    "pages/shopcart/shopcart",
+    "pages/test_cart/test_cart",
     "pages/products/products",
+    "pages/product_detail/product_detail",
     "pages/mine/mine",
-    "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/template/template"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -20,7 +23,7 @@
         "selectedIconPath": "icons/01blue.png"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/shopcart/shopcart",
         "text": "购物车",
         "iconPath": "icons/02.png",
         "selectedIconPath": "icons/02blue.png"

@@ -1,0 +1,4 @@
+<!--pages/test_cart/test_cart.wxml-->
+<view wx:for="{{ceshi}}">
+  {{index}}: {{item.product_name}}
+</view>

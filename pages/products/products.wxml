@@ -1,12 +1,14 @@
 <!--pages/products/products.wxml-->
 <view class='container'>
-<view></view>
 	<view class='products-container'>
-		<view wx:for="{{products}}" wx:key="id"  class='products-box' bindtap="showProduct">
-  		<image class='img' src="{{item.pic_url}}" mode="aspectFit"></image>
+		<!-- <view wx:for="{{products}}" wx:key="*this.id" id="{{index}}" class='products-box' bindtap="showProduct"> -->
+		<view wx:for="{{products}}" id="{{index}}" class='products-box' bindtap="showProduct">
+  		<image class='img' src="{{item.pic_url_thumb}}" mode="aspectFit"></image>
   		<view class='name'>{{item.name}}</view>
       <view class='price'>{{item.price}}￥</view>
+      <!-- <view class='price'>{{index}}</view> -->
 		</view>
   </view>
 
 </view>
+

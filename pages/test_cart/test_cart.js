@@ -1,12 +1,11 @@
-// pages/mine/mine.js
+// pages/test_cart/test_cart.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    title: "暂无信息",
-    ceshi: []
+  ceshi: []
   },
 
   /**
@@ -14,16 +13,15 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    wx.getLocation({
-      type: 'wgs84',
+    wx.getStorage({
+      key: 'shopping_cart',
       success: function(res) {
-        var latitude = res.latitude
-        var longitude = res.longitude
-        var speed = res.speed
-        var accuracy = res.accuracy
+        that.setData({
+          ceshi: res.data.shop_list
+        })
+        console.log(that.data.shop_list);
       }
     })
-
 
   },
 
@@ -38,16 +36,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    wx.getStorage({
-      key: 'shopping_cart',
-      success: function(res) {
-        console.log(typeof(res.data));
-        console.log(res.data)
-      }
-    })
+  
   },
 
-  /** 
+  /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
