@@ -1,4 +1,15 @@
-<!--pages/mine/mine.wxml-->
-<view class='container'>{{ title }}</view>
-<view class='container'>{{ author }}</view>
-<view class='container'>{{ created_at }}</view>
+<view class="weui-cells weui-cells_after-title">
+	<view class="weui-cell weui-cell_access" bindtap="goToAddress">
+		<view class="weui-cell__bd">
+			<view style="display: inline-block; vertical-align: middle">我的收货地址</view>
+		</view>
+		<view class="weui-cell__ft weui-cell__ft_in-access"></view>
+	</view>
+
+	<view class="weui-cell weui-cell_access">
+		<view class="weui-cell__bd">
+			<view style="display: inline-block; vertical-align: middle">我的订单</view>
+		</view>
+		<view class="weui-cell__ft weui-cell__ft_in-access"></view>
+	</view>
+</view>

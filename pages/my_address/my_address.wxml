@@ -1,0 +1,6 @@
+<!--pages/my_address/my_address.wxml-->
+<view class="footer-box">
+	<view class="new_address">
+		新增地址
+	</view>
+</view>

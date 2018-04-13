@@ -1,22 +1,18 @@
-// pages/mine/mine.js
+// pages/my_address/my_address.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-  },
-  goToAddress: function(){
-    wx.navigateTo({
-      url: '../my_address/my_address'
-    })
+  
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
+  
   },
 
   /**
@@ -30,9 +26,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+  
   },
 
-  /** 
+  /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {

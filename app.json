@@ -1,10 +1,12 @@
 {
   "pages": [
-    "pages/shopcart/shopcart",
-    "pages/test_cart/test_cart",
+    "pages/new_address/new_address",
     "pages/products/products",
-    "pages/product_detail/product_detail",
+    "pages/my_address/my_address",
     "pages/mine/mine",
+    "pages/test_cart/test_cart",
+    "pages/shopcart/shopcart",
+    "pages/product_detail/product_detail",
     "pages/logs/logs",
     "pages/template/template"
   ],
@@ -23,7 +25,7 @@
         "selectedIconPath": "icons/01blue.png"
       },
       {
-        "pagePath": "pages/shopcart/shopcart",
+        "pagePath": "pages/test_cart/test_cart",
         "text": "购物车",
         "iconPath": "icons/02.png",
         "selectedIconPath": "icons/02blue.png"

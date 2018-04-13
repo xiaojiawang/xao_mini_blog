@@ -5,24 +5,71 @@ Page({
    * 页面的初始数据
    */
   data: {
-  ceshi: []
+  shopcart_list: [],
+  minnum: 1,
+  total_price: 0
+  },
+
+  selectList: function(e){
+    var a = e.currentTarget.dataset.index;
+    this.data.shopcart_list[a].selected = !this.data.shopcart_list[a].selected
+    this.setData({
+      shopcart_list: this.data.shopcart_list
+    })
+    this.countTotalPrice();
+  },
+  numJiaTap: function(e) {
+    var current_product_index = e.currentTarget.dataset.index;
+    this.data.shopcart_list[current_product_index].num += 1;
+    this.setData({
+      shopcart_list: this.data.shopcart_list
+    })
+    this.countTotalPrice();
+  },
+  numJianTap: function(e){
+    var current_product_index = e.currentTarget.dataset.index;
+    if (this.data.shopcart_list[current_product_index].num > 1) {
+      this.data.shopcart_list[current_product_index].num -= 1;
+      this.setData({
+        shopcart_list: this.data.shopcart_list
+      })
+    }
+    this.countTotalPrice();
+  },
+  deleteList: function(e){
+    var current_product_index = e.currentTarget.dataset.index;
+    this.data.shopcart_list.splice(current_product_index, 1);
+    this.setData({
+      shopcart_list: this.data.shopcart_list
+    })
+    this.countTotalPrice();
+  },
+  countTotalPrice: function(){
+    var count_list = [];
+    for (var i = this.data.shopcart_list.length - 1; i >= 0; i--) {
+      if (this.data.shopcart_list[i].selected == true) {
+        count_list.push(i);
+      }
+    }
+    var total_price = 0;
+    for (var i = count_list.length - 1; i >= 0; i--) {
+      var a = count_list[i];
+      total_price += this.data.shopcart_list[a].num * this.data.shopcart_list[a].price;
+    }
+    this.setData({
+      total_price: total_price
+    })
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this;
-    wx.getStorage({
-      key: 'shopping_cart',
-      success: function(res) {
-        that.setData({
-          ceshi: res.data.shop_list
-        })
-        console.log(that.data.shop_list);
-      }
+    var shopcart_list = wx.getStorageSync('shopping_cart');
+    this.setData({
+      shopcart_list: shopcart_list.shop_list
     })
-
+    this.countTotalPrice();
   },
 
   /**
@@ -36,7 +83,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-  
   },
 
   /**

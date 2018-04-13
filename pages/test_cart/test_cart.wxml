@@ -1,4 +1,22 @@
-<!--pages/test_cart/test_cart.wxml-->
-<view wx:for="{{ceshi}}">
-  {{index}}: {{item.product_name}}
+<view class="cart-box">
+	<view class="cart-list" wx:for="{{shopcart_list}}" wx:key="{{index}}">
+  	<icon wx:if="{{item.selected}}" type="success" color="red" data-index="{{index}}"  class="cart-pro-select" bindtap="selectList"/>
+    <icon wx:else type="circle" class="cart-pro-select" data-index="{{index}}" bindtap="selectList"/>
+    <text class="cart-pro-name">{{item.product_name}}</text>
+    <text class="cart-pro-price">￥{{item.price}}</text>
+    <view class="cart-count-box">
+    	<text class="cart-count-down" bindtap="numJianTap" data-index="{{index}}">-</text>
+      <text class="cart-count-num">{{item.num}}</text>
+      <text class="cart-count-add" bindtap="numJiaTap" data-index="{{index}}">+</text>
+    </view>
+    <text class="cart-del" bindtap="deleteList" data-index="{{index}}">×</text>
+  </view>
+</view>
+<view class="footer-box">
+  <view class="total_price">
+    合计：¥ {{total_price}}
+  </view>
+  <view class="now-buy">
+    结算
+  </view>
 </view>

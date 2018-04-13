@@ -71,6 +71,7 @@ Page({
     current_shop_cart.price = this.data.product_price;
     current_shop_cart.pic = this.data.pic_url_thumb;
     current_shop_cart.num = this.data.buyNumber;
+    current_shop_cart.selected = true;
     var shopping_cart = this.data.shopping_cart;
     if (!shopping_cart.shop_num) {
       shopping_cart.shop_num = 0;

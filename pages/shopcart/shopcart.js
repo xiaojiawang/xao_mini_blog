@@ -14,5 +14,7 @@ Page({
     this.setData({
       product_list: wx.getStorageSync('shopping_cart').shop_list
     })
+    console.log(this.data.product_list);
+    console.log("测试");
   }
 })

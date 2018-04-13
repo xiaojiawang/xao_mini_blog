@@ -1,0 +1,63 @@
+<view class="page" xmlns:wx="http://www.w3.org/1999/xhtml">
+    <view class="page__bd">
+
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">收件人</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input bindinput="bindInputName" class="weui-input"/>
+                </view>
+            </view>
+        </view>
+
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">联系电话</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input bindinput="bindInputMobile" class="weui-input"/>
+                </view>
+            </view>
+        </view>
+
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_select">
+                <view class="weui-cell__hd weui-cell__hd_in-select-after">
+                    <view class="weui-label">国家/地区</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <picker mode="region" bindchange="bindProvinceChange" value="{{provinces}}" >
+                        <view class="weui-select weui-select_in-select-after">{{province_name}}  {{city_name}}  {{district_name}}</view>
+                    </picker>
+                </view>
+            </view>
+        </view>
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell weui-cell_input">
+                <view class="weui-cell__hd">
+                    <view class="weui-label">详细地址</view>
+                </view>
+                <view class="weui-cell__bd">
+                    <input bindinput="bindInputAddress" class="weui-input"/>
+                </view>
+            </view>
+        </view>
+
+        <!-- <view class="weui-cells__title">备注</view> -->
+        <view class="weui-cells weui-cells_after-title">
+            <view class="weui-cell">
+                <view class="weui-cell__bd">
+                    <textarea bindinput="bindInputDescription" class="weui-textarea" placeholder="请输入备注" style="height: 3.3em" />
+                    <view class="weui-textarea-counter">0/200</view>
+                </view>
+            </view>
+        </view>
+
+        <view class="weui-btn-area">
+            <button class="weui-btn" type="primary" bindtap="showTopTips">确定</button>
+        </view>
+    </view>
+</view>
