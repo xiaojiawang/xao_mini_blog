@@ -50,22 +50,33 @@ Page({
     })
   },
 
-  createAddress: function(e){
+  bindCreateAddress: function(e){
     wx.request({
       url: 'http://120.79.51.220/mini/test_addresses',
+      // url: 'http://127.0.0.1:3000/mini/test_addresses',
       data: {
-        name: this.data.name,
-        mobile: this.data.mobile,
-        province_id: this.data.province_name,
-        city_name: this.data.city_name,
-        district_name: this.data.district_name,
-        address: this.data.address,
-        description: this.data.description
+        test_address: {
+          name: this.data.name,
+          mobile: this.data.mobile,
+          province_id: this.data.province_name,
+          city_id: this.data.city_name,
+          district_id: this.data.district_name,
+          address: this.data.address,
+          description: this.data.description
+        }
       },
-      method: POST,
-      dataType: json,
+      method: 'POST',
+      dataType: 'json',
       success: function(res) {
-        console.log(res.data)
+        console.log(res.data.code);
+        if (res.data.code) {
+          wx.navigateTo({
+            url: '../my_address/my_address'
+          })
+        }
+        else{
+          console.log("出现了一些错误");
+        }
       }
     })
   },
